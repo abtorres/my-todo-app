@@ -2,7 +2,7 @@
   "name": "my-todo-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/abtorres/my-todo-app",
+  "homepage": "https://abtorres.github.io/my-todo-app",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
