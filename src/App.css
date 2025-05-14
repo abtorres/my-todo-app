@@ -32,7 +32,45 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+/* styles.css */
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  /* Keeps content near the top */
+  min-height: 100vh;
+  /* Full viewport height */
+  background-color: #f4f4f4;
+  /* Light gray background */
+  padding: 20px;
+}
+
+.todo-container {
+  width: 90%;
+  max-width: 500px;
+  /* Keeps it from stretching too wide */
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+/* 📱 Mobile Responsiveness */
+@media (max-width: 600px) {
+  .todo-container {
+    width: 100%;
+    /* Full width on small screens */
+  }
+}
+
+.todo-container {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
