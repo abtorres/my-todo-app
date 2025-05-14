@@ -34,9 +34,13 @@ const App = () => {
     setTodos([...todos, { id: Date.now(), text, completed: false }]);
   };
 
-  const toggleComplete = (id) => {
-    setTodos(todos.map(todo => todo.id === id ? { ...todo, completed: !todo.completed } : todo));
-  };
+ const toggleComplete = (id) => {
+  setTodos((prevTodos) =>
+    prevTodos.map((todo) =>
+      todo.id === id ? { ...todo, completed: !todo.completed } : todo
+    )
+  );
+};
 
   const removeTodo = (id) => {
     setTodos(todos.filter(todo => todo.id !== id));
@@ -57,12 +61,12 @@ const App = () => {
             </Button>
             <Typography variant="h4" sx={{ mt: 2 }}>Todo List</Typography>
             <AddTodo addTodo={addTodo} />
-            <List>
-              <TodoList todos={todos} toggleComplete={toggleComplete} removeTodo={removeTodo} />
-            </List>
             <Button variant="contained" color="secondary" onClick={() => setOpen(true)} sx={{ mt: 2 }}>
               Delete All Tasks
             </Button>
+            <List>
+              <TodoList todos={todos} toggleComplete={toggleComplete} removeTodo={removeTodo} />
+            </List>
           </Paper>
         </Fade>
         <Dialog open={open} onClose={() => setOpen(false)}>
